@@ -30,7 +30,7 @@ const getRoomById = (id) => {
   });
 };
 
-const safeRoom = (newRoom) => {
+const saveRoom = (newRoom) => {
   fs.readFile(path, 'utf8', (err, data) => {
     let rooms = [];
 
@@ -58,7 +58,7 @@ const safeRoom = (newRoom) => {
   });
 };
 
-const deleteRoome = (roomId, callback) => {
+const deleteRoom = (roomId, callback) => {
   fs.readFile(path, 'utf8', (err, data) => {
     let rooms = [];
 
@@ -85,7 +85,7 @@ const deleteRoome = (roomId, callback) => {
 
 export const roomsApi = {
   getAllRooms,
-  safeRoom,
-  deleteRoome,
+  saveRoom,
+  deleteRoom,
   getRoomById,
 };

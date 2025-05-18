@@ -24,6 +24,7 @@ const Rooms = () => {
     const newRoom = await roomsApi.createRoom({name: roomName});
 
     setRooms(prev => [...prev, newRoom])
+    setRoomName('')
   }
 
   const deleteRoom = async (id: string) => {
@@ -47,7 +48,7 @@ const Rooms = () => {
       </div>
       <form className='form' onSubmit={createRoom}>
         <input
-          max={10}
+          maxLength={10}
           type="text"
           value={roomName}
           onChange={(e) => setRoomName(e.target.value)}

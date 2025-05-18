@@ -36,7 +36,7 @@ const Room = ({room, onDelete, onUpdate}: Props) => {
         ? (
         <form className='miniform' onSubmit={(e) => e.preventDefault()}>
           <input
-            max={10}
+            maxLength={10}
             type="text"
             name='name'
             value={newName}

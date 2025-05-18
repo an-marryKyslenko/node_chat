@@ -10,7 +10,8 @@ const Form = ({onCreate}: Props) => {
 
   const submit = async (e: FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
-    onCreate(text)
+    onCreate(text);
+    setText('');
   }
   return (
     <form className='form' onSubmit={submit}>

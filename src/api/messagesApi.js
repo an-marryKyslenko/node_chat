@@ -10,7 +10,7 @@ function saveMessageToJson(newMessage) {
       try {
         messages = JSON.parse(data);
       } catch (e) {
-        throw e;
+        throw new Error(e);
       }
     }
 
@@ -18,7 +18,7 @@ function saveMessageToJson(newMessage) {
 
     fs.writeFile(path, JSON.stringify(messages, null, 2), (e) => {
       if (e) {
-        throw err;
+        throw new Error(e);
       }
     });
   });

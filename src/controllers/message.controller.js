@@ -12,7 +12,7 @@ const getAllMessages = async (req, res) => {
   const messages = await messagesApi.getAllMessages(roomId);
 
   if (!messages) {
-    res.statusCode(400);
+    res.status(400).json({message: 'Didn\'t find messages belong to this room'});
 
     return;
   }

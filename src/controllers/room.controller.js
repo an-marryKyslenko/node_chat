@@ -21,7 +21,7 @@ const createRoom = (req, res) => {
     id,
   };
 
-  roomsApi.safeRoom(newRoom);
+  roomsApi.saveRoom(newRoom);
   res.status(201).json(newRoom);
 };
 
@@ -40,7 +40,7 @@ const updateRoom = (req, res) => {
     id,
   };
 
-  roomsApi.safeRoom(updatedRoom);
+  roomsApi.saveRoom(updatedRoom);
   res.status(201).json(updatedRoom);
 };
 
@@ -53,7 +53,7 @@ const deleteRoom = (req, res) => {
     return;
   }
 
-  roomsApi.deleteRoome(id, (err) => {
+  roomsApi.deleteRoom(id, (err) => {
     if (err) {
       return res.status(500).json({ message: 'Error deleting room' });
     }

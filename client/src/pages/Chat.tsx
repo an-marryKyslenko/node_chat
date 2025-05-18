@@ -14,11 +14,6 @@ const Chat = () => {
   const navigate = useNavigate();
   const [activeRoom, setActiveRoom] = useState<RoomType | null>(null);
 
-  if(!id) {
-    navigate('/rooms')
-    return;
-  }
-
   const getRoom = async () => {
     if(!id) return;
     try {
@@ -44,6 +39,7 @@ const Chat = () => {
   }
 
   const createMessage = async (text: string) => {
+    if (!id) return;
     const author = localStorage.getItem('user') as string;
 
     const newMessage = await messagesApi.createMessage({
@@ -56,6 +52,10 @@ const Chat = () => {
   }
 
   useEffect(() => {
+    if (!id) {
+      navigate('/login')
+    }
+
     const userName = localStorage.getItem('user');
 
     if(userName) {

@@ -13,7 +13,9 @@ const Login = () => {
     const userName = form.get('name') as string;
 
     localStorage.setItem('user', userName);
-    setUser({name: userName})
+    setUser({name: userName});
+
+    e.currentTarget.reset();
   }
 
   useEffect(()=>{
