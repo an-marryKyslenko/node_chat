@@ -15,7 +15,6 @@ const Rooms = () => {
 
   useEffect(() => {
     getRooms()
-    console.log('efect')
   }, [])
 
   const createRoom  = async (e: FormEvent<HTMLFormElement>) => {
